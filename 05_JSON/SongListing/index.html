@@ -9,40 +9,74 @@
 </head>
 <body class="p-4">
 <div class="container">
-    <h1 class="text-center text-primary mb-4">🎵 Excercise Songs List</h1>
+    <h1 class="text-center text-primary mb-4">🎵 Excercise Songs List
+         <span class="text-info">Salma</span>
+    </h1>
 
     <div class="card border-primary mb-4">
         <div class="card-body">
             <form id="songForm" class="row g-2">
-                <input type="hidden" id="songId"> 
-                
-                <div class="col-md-5">
-                    <input type="text" id="title" class="form-control" placeholder="Song Title" required>
-                </div>
-                <div class="col-md-5">
-                    <input type="url" id="url" class="form-control" placeholder="YouTube URL" required>
-                </div>
+                <input type="hidden" id="songId">
+
+                    <div class="col-md-4">
+                        <input type="text" id="title" class="form-control" placeholder="Song Title" required>
+                    </div>
+
+                    <div class="col-md-4">
+                        <input type="url" id="url" class="form-control" placeholder="YouTube URL" required>
+                    </div>
+
+                    <div class="col-md-2">
+                         <input type="number" id="rating" class="form-control" placeholder="Rating 1-10"
+                             min="1" max="10" required>
+                 </div>
+
                 <div class="col-md-2">
-                    <button type="submit" id="submitBtn" class="btn btn-success w-100">
-                        <i class="fas fa-plus"></i> Add
+                     <button type="submit" id="submitBtn" class="btn btn-success w-100">
+                         <i class="fas fa-plus"></i> Save
                     </button>
                 </div>
             </form>
         </div>
     </div>
 
-    <div class="d-flex justify-content-between mb-3">
-        <input type="text" id="search" class="form-control w-50" placeholder="Search...">
-        <select id="sort" class="form-select w-25">
-            <option value="newest">Newest First</option>
-            <option value="az">A-Z</option>
-        </select>
+    <div class="d-flex justify-content-between mb-3 align-items-center">
+    <input type="text" id="search" class="form-control w-50" placeholder="Search...">
+    
+    <div class="ms-3">
+        <span class="me-2">Sort by:</span>
+        <label class="me-2">
+            <input type="radio" name="sort" value="date" checked> Date
+        </label>
+        <label class="me-2">
+            <input type="radio" name="sort" value="title"> Name
+        </label>
+        <label>
+            <input type="radio" name="sort" value="rating"> Rating
+        </label>
     </div>
 
-    <table class="table table-hover">
-        <thead><tr><th>Title</th><th>Link</th><th class="text-end">Actions</th></tr></thead>
-        <tbody id="songList"></tbody>
-    </table>
+    <button id="toggleView" class="btn btn-outline-info ms-3">
+        <i class="fas fa-table"></i>
+    </button>
+</div>
+
+
+    <table class="table table-hover" id="tableView">
+    <thead>
+    <tr>
+        <th>Thumbnail</th>
+        <th>Title</th>
+        <th>Rating</th>
+        <th class="text-end">Actions</th>
+    </tr>
+    </thead>
+    <tbody id="songList"></tbody>
+</table>
+
+
+<div class="row d-none" id="cardView"></div>
+
 </div>
 <script src="script.js"></script>
 </body>
