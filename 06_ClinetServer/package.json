@@ -1,0 +1,21 @@
+{
+  "name": "webdev_1",
+  "version": "1.0.0",
+  "description": "",
+  "keywords": [],
+  "homepage": "https://github.com/salmaasle12-jpg/SALMA#readme",
+  "bugs": {
+    "url": "https://github.com/salmaasle12-jpg/SALMA/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/salmaasle12-jpg/SALMA.git"
+  },
+  "license": "ISC",
+  "author": "",
+  "type": "commonjs",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  }
+}
